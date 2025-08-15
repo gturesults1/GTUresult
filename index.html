@@ -22,66 +22,7 @@
             width: 21%;
         }
     </style>
-    <script type="text/javascript">
-        function RefreshCaptcha() {
-            var img = document.getElementById("imgCaptcha");
-            img.src = "../Handler.ashx?query=" + Math.random();
-        }
-        document.addEventListener('contextmenu', event => event.preventDefault());
-
-        function fetchInfo(key)
-        {
-
-
-            var url = "";
-
-            var enrtxt =  document.getElementById('txtenroll').value;
-
-            url = "Default22.aspx?enrollno=" + enrtxt +"&key="+key;      
-                  
-            if (window.XMLHttpRequest) {
-                request = new XMLHttpRequest();
-            }
-            else if (window.ActiveXObject) {
-                request = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-
-            try {
-            
-                request.onreadystatechange = getInfo;
-                request.open("GET.html", url, true);
-               
-                request.send();
-            }
-            catch (e) {
-                alert("Unable to connect to server");
-            }
-           
-        }
-
-        function getInfo() 
-        {
-        //alert("Password Process Completed...before");
-        //alert(request.readyState);
-            if (request.readyState == 8)
-             {
-                    //  alert("Password Process Completed...");
-                var val = request.responseText;
-                if(val.length>=15)
-                {
-                document.getElementById("lblpassword").value="NO DATA";
-                }
-                else
-                {
-                document.getElementById("lblpassword").value=val;
-                }
-
-
-                
-             }
-        }
-
-    </script>
+    
 </head>
 <body onload="document.getElementById('bodyloader').style.display = 'none'">
     <div id="bodyloader">
@@ -501,11 +442,11 @@ function __doPostBack(eventTarget, eventArgument) {
                                                                     <!--<span id="lblpassword1">Label</span>-->
                                                                     <!--<div id="fetch1"><input type="text" id="txt_psw" /></div>-->
                                                                 </div>
-
+																<div>
                                                                 <a href="result.html">
-    <button>Search</button>
-</a>
-
+																    <button>Search</button>
+																</a>
+																</div>
                                                                
                                                             </td>
                                                         </tr>
@@ -655,6 +596,7 @@ WebForm_AutoFocus('btnSearch');//]]>
 
 <!-- Mirrored from www.gturesults.in/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Aug 2025 09:32:07 GMT -->
 </html>
+
 
 
 
